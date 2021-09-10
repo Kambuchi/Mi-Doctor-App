@@ -98,129 +98,130 @@ class MyPlanPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      // Positioned(
-                      //   bottom: 15,
-                      //   right: 15,
-                      //   child: Column(
-                      //     children: <Widget>[
-                      //       insuredModel.estado == 'Activo'
-                      //           ? const SizedBox.shrink()
-                      //           : const Icon(
-                      //               Icons.warning_rounded,
-                      //               color: Colors.red,
-                      //               size: 34,
-                      //             ),
-                      //       Text(
-                      //         insuredModel.estado.toUpperCase(),
-                      //         style: kCalloutStyle.copyWith(
-                      //             color: Colors.white,
-                      //             shadows: [
-                      //               const Shadow(
-                      //                   color: Colors.black,
-                      //                   blurRadius: 3,
-                      //                   offset: Offset(1, 1))
-                      //             ]),
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
-                      // Positioned(
-                      //   top: 100,
-                      //   right: 15,
-                      //   child: Column(
-                      //     mainAxisAlignment: MainAxisAlignment.start,
-                      //     crossAxisAlignment: CrossAxisAlignment.end,
-                      //     children: <Widget>[
-                      //       Text(
-                      //         insuredModel.plan,
-                      //         style: kHeadlineStyle.copyWith(
-                      //             color: Colors.white,
-                      //             shadows: [
-                      //               const Shadow(
-                      //                   color: Colors.black,
-                      //                   blurRadius: 3,
-                      //                   offset: Offset(1, 1))
-                      //             ]),
-                      //       ),
-                      //       Row(
-                      //         crossAxisAlignment: CrossAxisAlignment.end,
-                      //         children: [
-                      //           Text(
-                      //             insuredModel.tipoAsegurado.toString(),
-                      //             style: kBodyStyle.copyWith(
-                      //                 color: Colors.white,
-                      //                 shadows: [
-                      //                   const Shadow(
-                      //                       color: Colors.black,
-                      //                       blurRadius: 3,
-                      //                       offset: Offset(1, 1))
-                      //                 ]),
-                      //           ),
-                      //         ],
-                      //       ),
-                      //       Row(
-                      //         crossAxisAlignment: CrossAxisAlignment.end,
-                      //         children: [
-                      //           Text(
-                      //             'Contrato: ',
-                      //             style: kFootnoteStyle.copyWith(
-                      //                 color: Colors.white,
-                      //                 shadows: [
-                      //                   const Shadow(
-                      //                       color: Colors.black,
-                      //                       blurRadius: 3,
-                      //                       offset: Offset(1, 1))
-                      //                 ]),
-                      //           ),
-                      //           Text(
-                      //             insuredModel.nrocontrato.toString(),
-                      //             style: kBodyStyle.copyWith(
-                      //                 color: Colors.white,
-                      //                 shadows: [
-                      //                   const Shadow(
-                      //                       color: Colors.black,
-                      //                       blurRadius: 3,
-                      //                       offset: Offset(1, 1))
-                      //                 ]),
-                      //           ),
-                      //         ],
-                      //       ),
-                      //          Column(
-                      //           crossAxisAlignment: CrossAxisAlignment.end,
-                      //           children: <Widget>[
-                      //             if(insuredModel.tipoAsegurado == 'TITULAR') ... [
-                      //               if(insuredModel.adherentes != null) ... [
-                      //                 Text(
-                      //                   'Adherentes',
-                      //                   style: kBodyStyle.copyWith(
-                      //                   color: Colors.white,
-                      //                   shadows: [
-                      //                     const Shadow(
-                      //                         color: Colors.black,
-                      //                         blurRadius: 3,
-                      //                         offset: Offset(1, 1))
-                      //                   ]),
-                      //                   ),
-                      //               for(var item in insuredModel.adherentes)
-                      //                 Text(
-                      //                   item.nombreAdherente.toString(),
-                      //                   style: kBodyStyle.copyWith(
-                      //                   fontSize: 13,
-                      //                   color: Colors.white,
-                      //                   shadows: [
-                      //                     const Shadow(
-                      //                         color: Colors.black,
-                      //                         blurRadius: 3,
-                      //                         offset: Offset(1, 1))
-                      //                     ]),
-                      //                 )
-                      //               ]
-                      //             ]
-                      //           ],
-                      //         ),
-                      //     ],
-                      //   ),
-                      // )
+                      Positioned(
+                        top: 85,
+                        right: 32,
+                        child: Column(
+                          children: <Widget>[
+                            //       insuredModel.estado == 'Activo'
+                            //           ? const SizedBox.shrink()
+                            //           : const Icon(
+                            //               Icons.warning_rounded,
+                            //               color: Colors.red,
+                            //               size: 34,
+                            //             ),
+                            //       Text(
+                            //         insuredModel.estado.toUpperCase(),
+                            //         style: kCalloutStyle.copyWith(
+                            //             color: Colors.white,
+                            //             shadows: [
+                            //               const Shadow(
+                            //                   color: Colors.black,
+                            //                   blurRadius: 3,
+                            //                   offset: Offset(1, 1))
+                            //             ]),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
+                            // Positioned(
+                            //   top: 100,
+                            //   right: 15,
+                            //   child: Column(
+                            //     mainAxisAlignment: MainAxisAlignment.start,
+                            //     crossAxisAlignment: CrossAxisAlignment.end,
+                            //     children: <Widget>[
+                            //       Text(
+                            //         insuredModel.plan,
+                            //         style: kHeadlineStyle.copyWith(
+                            //             color: Colors.white,
+                            //             shadows: [
+                            //               const Shadow(
+                            //                   color: Colors.black,
+                            //                   blurRadius: 3,
+                            //                   offset: Offset(1, 1))
+                            //             ]),
+                            //       ),
+                            //       Row(
+                            //         crossAxisAlignment: CrossAxisAlignment.end,
+                            //         children: [
+                            //           Text(
+                            //             insuredModel.tipoAsegurado.toString(),
+                            //             style: kBodyStyle.copyWith(
+                            //                 color: Colors.white,
+                            //                 shadows: [
+                            //                   const Shadow(
+                            //                       color: Colors.black,
+                            //                       blurRadius: 3,
+                            //                       offset: Offset(1, 1))
+                            //                 ]),
+                            //           ),
+                            //         ],
+                            //       ),
+                            //       Row(
+                            //         crossAxisAlignment: CrossAxisAlignment.end,
+                            //         children: [
+                            //           Text(
+                            //             'Contrato: ',
+                            //             style: kFootnoteStyle.copyWith(
+                            //                 color: Colors.white,
+                            //                 shadows: [
+                            //                   const Shadow(
+                            //                       color: Colors.black,
+                            //                       blurRadius: 3,
+                            //                       offset: Offset(1, 1))
+                            //                 ]),
+                            //           ),
+                            //           Text(
+                            //             insuredModel.nrocontrato.toString(),
+                            //             style: kBodyStyle.copyWith(
+                            //                 color: Colors.white,
+                            //                 shadows: [
+                            //                   const Shadow(
+                            //                       color: Colors.black,
+                            //                       blurRadius: 3,
+                            //                       offset: Offset(1, 1))
+                            //                 ]),
+                            //           ),
+                            //         ],
+                            //       ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: <Widget>[
+                                if (insuredModel.tipoAsegurado ==
+                                    'TITULAR') ...[
+                                  if (insuredModel.adherentes != null) ...[
+                                    Text(
+                                      'Adherentes',
+                                      style: kBodyStyle.copyWith(
+                                          color: Colors.white,
+                                          shadows: [
+                                            const Shadow(
+                                                color: Colors.black,
+                                                blurRadius: 3,
+                                                offset: Offset(1, 1))
+                                          ]),
+                                    ),
+                                    for (var item in insuredModel.adherentes)
+                                      Text(
+                                        item.nombreAdherente.toString(),
+                                        style: kBodyStyle.copyWith(
+                                            fontSize: 12,
+                                            color: Colors.white,
+                                            shadows: [
+                                              const Shadow(
+                                                  color: Colors.black,
+                                                  blurRadius: 3,
+                                                  offset: Offset(1, 1))
+                                            ]),
+                                      )
+                                  ]
+                                ]
+                              ],
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),

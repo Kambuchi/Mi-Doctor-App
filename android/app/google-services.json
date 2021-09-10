@@ -14,19 +14,19 @@
       },
       "oauth_client": [
         {
-          "client_id": "861253824919-44ej2ig4gg9krqh636v0uom126vk5hhn.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.arasait.app_mi_doctor",
-            "certificate_hash": "9281ecdedc13949f50418d76c1fee527ec640033"
-          }
-        },
-        {
-          "client_id": "861253824919-mtjplamhfrma4vbvp0mjefetir3to1l0.apps.googleusercontent.com",
+          "client_id": "861253824919-7pk2ol4e8lbmq72unht8rhv2oneghqcq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.arasait.app_mi_doctor",
             "certificate_hash": "0d084706e646e5ed1712e139eeac5807006019d7"
+          }
+        },
+        {
+          "client_id": "861253824919-jui5em7dq930f52p1fu27nt6t3rij8pr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arasait.app_mi_doctor",
+            "certificate_hash": "9281ecdedc13949f50418d76c1fee527ec640033"
           }
         },
         {
