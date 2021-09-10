@@ -55,11 +55,11 @@ class _MobileLoginPageState extends State<MobileLoginPage> {
       if (authCredential.user != null) {
         await users.doc('${authCredential.user!.uid}').get().then((value) {        
           if (value.exists == true) {
-            router.pushNamed(
+            router.pushNamedAndRemoveUntil(
               Routes.SPLASH
             );
           } else {
-            router.pushNamed(
+            router.pushNamedAndRemoveUntil(
               Routes.REGISTER_CI,
               arguments: authCredential.user,
             );

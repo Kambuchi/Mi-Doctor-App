@@ -80,7 +80,7 @@ class _RegisterCiState extends State<RegisterCi> {
                     'ci': _text.text,
                     'telefono': user.phoneNumber,
                   });
-                  router.pushNamed(
+                  router.pushNamedAndRemoveUntil(
                     Routes.SPLASH,
                   );
                 }
