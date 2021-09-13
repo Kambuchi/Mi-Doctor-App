@@ -1,4 +1,6 @@
 
+import '../pages/service_providers/service_providers.dart';
+
 import '../pages/register_ci/register_ci.dart';
 import '../pages/home/home_page.dart';
 import '../pages/landing_page/landing_page.dart';
@@ -25,6 +27,8 @@ Map<String, Widget Function(BuildContext)> get appRoutes => {
       Routes.SELECT_PLAN: (_) => const SelectPlanPage(),
       Routes.MY_PLAN: (_) => const MyPlanPage(),
       Routes.VERIFY_EMAIL: (_) => const VerifyEmailPage(),
+            Routes.SERVICE_PROVIDERS: (_) => const ServiceProviders(),
+
       Routes.LANDING_PAGE: (_) => const LandingPage(),
       Routes.MOBILE_LOGIN: (_) => const MobileLoginPage(),
     };
