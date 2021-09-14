@@ -51,10 +51,10 @@ class ProfileTab extends ConsumerWidget {
           child: user.photoURL == null
               ? Text(
                   firstLetter,
-                  style: const TextStyle(fontSize: 60),
+                  style: const TextStyle(fontSize: 60, color: Colors.white),
                 )
               : null,
-          backgroundColor: isDark ? primaryDarkColor : Colors.green[900],
+          backgroundColor: primaryDarkColor,
           backgroundImage:
               user.photoURL != null ? NetworkImage(user.photoURL!) : null,
         ),

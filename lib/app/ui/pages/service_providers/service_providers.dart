@@ -20,11 +20,11 @@ class ServiceProviders extends StatelessWidget {
             (index) {
               final item = officeList.offices[index];
               return Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(4.0),
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color.fromRGBO(220, 220, 220, 1)),
+                      borderRadius: BorderRadius.circular(20),
+                      color: primaryDarkColor,),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
@@ -42,7 +42,7 @@ class ServiceProviders extends StatelessWidget {
                       Icon(
                         Icons.apartment,
                         size: 75,
-                        color: primaryDarkColor,
+                        color: Colors.white,
                       ),
                       Text(
                         'Télefono: ' + item.telefono,
@@ -65,25 +65,36 @@ class ServiceProviders extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            width: 130,
+                          Container(
                             height: 50,
+                            width: 130,
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                color: secondaryDarkColor,
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20.0),
+                                    bottomRight: Radius.circular(20.0))),
                             child: ElevatedButton(
-                                onPressed: () => launch(
-                                    'http://maps.google.com?q=' +
-                                        item.ubicacion +
-                                        '&ll=' +
-                                        item.ubicacion +
-                                        ',17z'),
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.pin_drop_rounded),
-                                    Text(
-                                      "Ver en Maps",
-                                      style: TextStyle(fontSize: 15),
-                                    ),
-                                  ],
-                                )),
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.transparent,
+                                  shadowColor: Colors.transparent),
+                              onPressed: () => launch(
+                                  'http://maps.google.com?q=' +
+                                      item.ubicacion +
+                                      '&ll=' +
+                                      item.ubicacion +
+                                      ',17z'),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.pin_drop_rounded),
+                                  Text(
+                                    "Mapa",
+                                    style: TextStyle(fontSize: 15),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                           SizedBox(
                             width: 20,
@@ -91,22 +102,33 @@ class ServiceProviders extends StatelessWidget {
                           SizedBox(
                             width: 130,
                             height: 50,
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  _makingPhoneCall(item.telefono);
-                                },
-                                child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.phone),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                        "Llamar",
-                                        style: TextStyle(fontSize: 15),
-                                      ),
-                                    ])),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: secondaryDarkColor,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20.0),
+                                      bottomRight: Radius.circular(20.0))),
+                              child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Colors.transparent,
+                                      shadowColor: Colors.transparent),
+                                  onPressed: () {
+                                    _makingPhoneCall(item.telefono);
+                                  },
+                                  child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(Icons.phone),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          "Llamar",
+                                          style: TextStyle(fontSize: 15),
+                                        ),
+                                      ])),
+                            ),
                           ),
                         ],
                       ),
@@ -130,6 +152,6 @@ _makingPhoneCall(String num) async {
   if (await canLaunch(url)) {
     await launch(url);
   } else {
-    throw 'Could not launch $url';
+    throw 'No se encontro $url';
   }
 }
