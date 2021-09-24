@@ -3,8 +3,6 @@ platform :ios, '12.0'
 
 pod 'Firebase/Firestore'
 
-# Optionally, include the Swift extensions if you're using Swift.
-pod 'FirebaseFirestoreSwift'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
