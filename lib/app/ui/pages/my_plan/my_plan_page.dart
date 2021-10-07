@@ -1,3 +1,4 @@
+import 'package:app_mi_doctor/app/ui/global_controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_meedu/router.dart' as router;
 import 'utils/build_image.dart';
@@ -185,39 +186,42 @@ class MyPlanPage extends StatelessWidget {
                             //           ),
                             //         ],
                             //       ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: <Widget>[
-                                if (insuredModel.tipoAsegurado ==
-                                    'TITULAR') ...[
-                                  if (insuredModel.adherentes != null) ...[
-                                    Text(
-                                      'Adherentes',
-                                      style: kBodyStyle.copyWith(
-                                          color: Colors.white,
-                                          shadows: [
-                                            const Shadow(
-                                                color: Colors.black,
-                                                blurRadius: 3,
-                                                offset: Offset(1, 1))
-                                          ]),
-                                    ),
-                                    for (var item in insuredModel.adherentes)
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 5),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: <Widget>[
+                                  if (insuredModel.tipoAsegurado ==
+                                      'TITULAR') ...[
+                                    if (insuredModel.adherentes != null) ...[
                                       Text(
-                                        item.nombreAdherente.toString(),
+                                        'Adherentes',
                                         style: kBodyStyle.copyWith(
-                                            fontSize: 12,
                                             color: Colors.white,
                                             shadows: [
                                               const Shadow(
-                                                  color: Colors.black,
+                                                  color: Colors.black87,
                                                   blurRadius: 3,
                                                   offset: Offset(1, 1))
                                             ]),
-                                      )
+                                      ),
+                                      for (var item in insuredModel.adherentes)
+                                        Text(
+                                          item.nombreAdherente.toString(),
+                                          style: kBodyStyle.copyWith(
+                                              fontSize: 12,
+                                              color: Colors.white,
+                                              shadows: [
+                                                const Shadow(
+                                                    color: Colors.black87,
+                                                    blurRadius: 3,
+                                                    offset: Offset(1, 1))
+                                              ]),
+                                        )
+                                    ]
                                   ]
-                                ]
-                              ],
+                                ],
+                              ),
                             ),
                           ],
                         ),
