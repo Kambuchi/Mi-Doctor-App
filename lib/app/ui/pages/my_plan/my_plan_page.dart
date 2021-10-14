@@ -39,6 +39,27 @@ class MyPlanPage extends StatelessWidget {
                         key: UniqueKey(),
                       ),
                       Positioned(
+                        top: 35,
+                        left: 20,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Text(
+                              insuredModel.plan ,
+                              style: kHeadlineStyle.copyWith(
+                                  color: Colors.white,
+                                  shadows: [
+                                    const Shadow(
+                                        color: Colors.black,
+                                        blurRadius: 3,
+                                        offset: Offset(1, 1))
+                                  ]),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
                         bottom: 15,
                         left: 15,
                         child: Column(

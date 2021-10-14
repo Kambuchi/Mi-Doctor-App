@@ -11,19 +11,19 @@ class BuildImage extends StatelessWidget {
     String cardImage;
     switch (planId) {
       case 31:
-        cardImage = 'assets/images/plans/plan_1.png';
+        cardImage = 'assets/images/plans/plan_31.png';
         break;
       case 32:
-        cardImage = 'assets/images/plans/plan_2.png';
+        cardImage = 'assets/images/plans/plan_32.png';
         break;
       case 33:
-        cardImage = 'assets/images/plans/plan_3.png';
+        cardImage = 'assets/images/plans/plan_33.png';
         break;
       case 34:
-        cardImage = 'assets/images/plans/plan_4.png';
+        cardImage = 'assets/images/plans/plan_34.png';
         break;
       default:
-        cardImage = 'assets/images/plans/plan_1.png';
+        cardImage = 'assets/images/plans/plan_31.png';
     }
     return Image.asset(cardImage);
   }
