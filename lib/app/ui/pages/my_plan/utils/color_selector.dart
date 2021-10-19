@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 Color selectColorCard(String plan) {
   Color _temp;
   switch (plan) {
-    case 'PLAN SINGULAR':
-      _temp = kSingularPlanColor;
+    case 'PLAN ESCENCIAL':
+      _temp = kEscencialPlanColor;
       break;
-    case 'PLAN SINGULAR PLUS':
-      _temp = kSingularPlusPlanColor;
+    case 'PLAN BASICO':
+      _temp = kBasicoPlanColor;
       break;
     case 'PLAN PREFERENTE':
       _temp = kPreferentPlanColor;

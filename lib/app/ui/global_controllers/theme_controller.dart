@@ -17,6 +17,7 @@ const Map<int, Color> swatch = {
 };
 
 const primaryDarkColor = Color(0xff004c98);
+const secondaryDarkColor = Color(0xffd90505);
 const primaryLigthColor = Color(0xff005998);
 
 class ThemeController extends SimpleNotifier {

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import '../../../../../domain/models/office_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -27,10 +28,30 @@ class _HomeTabState extends State<HomeTab> with TickerProviderStateMixin {
 
   late InsuredModel insuredModel;
   late InsuredList _insuredList;
+  late OfficeList officeList;
   late dynamic planList;
   late AdherentList adherentList;
 
   bool isLoading = false;
+
+  Future<OfficeList?> getOffices() async {
+    http.Response response =
+        await http.get(Uri.parse('https://odexapi.herokuapp.com/consultorio/'));
+    if (response.statusCode == 200) {
+      String body = utf8.decode(response.bodyBytes);
+      final data = json.decode(body);
+      officeList = OfficeList.fromJson(data);
+    } else {
+      setState(() {
+        isLoading = false;
+      });
+      return null;
+    }
+    setState(() {
+      isLoading = false;
+    });
+    return officeList;
+  }
 
   Future<InsuredList?> getMyPlan(String id) async {
     http.Response response = await http
@@ -78,6 +99,7 @@ class _HomeTabState extends State<HomeTab> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Stack(
@@ -104,6 +126,51 @@ class _HomeTabState extends State<HomeTab> with TickerProviderStateMixin {
                 GestureDetector(
                   onTap: () => _submitButtonOnPresses(context),
                   child: Container(
+                    width: screenWidth * 0.85,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 36, vertical: 20),
+                    margin: const EdgeInsets.only(bottom: 30, top: 30),
+                    decoration: const BoxDecoration(
+                        color: secondaryDarkColor,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20.0),
+                            bottomRight: Radius.circular(20.0))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        const Icon(
+                          Icons.arrow_forward_ios,
+                          size: 18.0,
+                          color: Colors.white,
+                        ),
+                        const SizedBox(width: 10.0),
+                        Text(
+                          "Ver mi plan".toUpperCase(),
+                          style: kCalloutStyle.copyWith(color: Colors.white),
+                        ),
+                        const SizedBox(width: 10.0),
+                      ],
+                    ),
+                  ),
+                ),
+                // const SizedBox(
+                //   height: 10,
+                // ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isLoading = true;
+                    });
+                    getOffices().then((value) => {
+                          router.pushNamed(
+                            Routes.SERVICE_PROVIDERS,
+                            arguments: value,
+                          )
+                        });
+                  },
+                  child: Container(
+                    width: screenWidth * 0.85,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 36, vertical: 20),
                     margin: const EdgeInsets.only(bottom: 30, top: 30),
@@ -113,18 +180,20 @@ class _HomeTabState extends State<HomeTab> with TickerProviderStateMixin {
                             topLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0))),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        Text(
-                          "Ver mi plan".toUpperCase(),
-                          style: kCalloutStyle.copyWith(color: Colors.white),
-                        ),
-                        const SizedBox(width: 20.0),
                         const Icon(
-                          Icons.arrow_forward_ios,
+                          Icons.work_outline_sharp,
                           size: 18.0,
                           color: Colors.white,
-                        )
+                        ),
+                        const SizedBox(width: 10),
+                        Text(
+                          "Prestadores de Servicios".toUpperCase(),
+                          style: kCalloutStyle.copyWith(color: Colors.white),
+                        ),
+                        const SizedBox(width: 10),
                       ],
                     ),
                   ),

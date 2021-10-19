@@ -5,9 +5,9 @@ const kKeppel = Color(0xff005998);
 const kBlackChocolate = Color(0xff191610);
 const kCultured = Color(0xffF9F9FA);
 
-const kSingularPlanColor = Color(0xff39a2ab);
-const kSingularPlusPlanColor = Color(0xff2364a7);
-const kPreferentPlanColor = Color(0xff95a9b4);
+const kEscencialPlanColor = Color(0xff95a9b4);
+const kBasicoPlanColor = Color(0xff39a2ab);
+const kPreferentPlanColor = Color(0xff2364a7);
 const kPreferentPlusPlanColor = Color(0xffD2AE34);
 
 // Text Styles

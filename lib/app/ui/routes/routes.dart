@@ -18,6 +18,8 @@ abstract class Routes {
   // ignore: constant_identifier_names
   static const VERIFY_EMAIL = '/verify-email';
   // ignore: constant_identifier_names
+  static const SERVICE_PROVIDERS = '/service-providers';
+  // ignore: constant_identifier_names
   static const LANDING_PAGE = '/landing-page';
   // ignore: constant_identifier_names
   static const MOBILE_LOGIN = '/mobile-login';
