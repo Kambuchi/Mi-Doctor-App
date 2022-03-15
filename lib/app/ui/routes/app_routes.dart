@@ -20,7 +20,7 @@ import 'routes.dart';
 Map<String, Widget Function(BuildContext)> get appRoutes => {
       Routes.SPLASH: (_) => const SplashPage(),
       Routes.LOGIN: (_) => const LoginPage(),
-      Routes.HOME: (_) => const HomePage(),
+      Routes.HOME: (_) =>  HomePage(),
       Routes.REGISTER: (_) => const RegisterPage(),
       Routes.REGISTER_CI: (_) =>  RegisterCi(),
       Routes.RESET_PASSWORD: (_) => const ResetPasswordPage(),

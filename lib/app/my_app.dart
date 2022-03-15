@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(builder: (_, watch, __) {
-      final theme = watch(themeProvider);
+    return Consumer(builder: (_, ___, __) {
+      final theme = themeProvider.read;
       return MaterialApp(
         title: 'Mi Doctor',
         navigatorKey: router.navigatorKey,

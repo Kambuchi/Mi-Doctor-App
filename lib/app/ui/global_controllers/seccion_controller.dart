@@ -7,8 +7,8 @@ class SessionController extends SimpleNotifier {
   User? _user;
   User? get user => _user;
 
-  final _auth = Get.i.find<AuthenticationRepository>();
-  final _account = Get.i.find<AccountRepository>();
+  final _auth = Get.find<AuthenticationRepository>();
+  final _account = Get.find<AccountRepository>();
 
   void setUser(User user) {
     _user = user;

@@ -11,7 +11,7 @@ class RegisterController extends StateNotifier<RegisterState> {
   RegisterController(this._sessionController)
       : super(RegisterState.initialState);
   final GlobalKey<FormState> formKey = GlobalKey();
-  final _signUpRepository = Get.i.find<SignUpRepository>();
+  final _signUpRepository = Get.find<SignUpRepository>();
 
   Future<SignUpResponse> submit() async {
     final response = await _signUpRepository.register(

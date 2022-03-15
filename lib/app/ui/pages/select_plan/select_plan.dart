@@ -14,7 +14,7 @@ class SelectPlanPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final insuredList = router.arguments(context);
+    final InsuredList insuredList = router.arguments as InsuredList;
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -28,9 +28,9 @@ class SelectPlanPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: ListView.builder(
-                      itemCount: insuredList.length,
+                      itemCount: insuredList.insureds.length,
                       itemBuilder: (context, index) =>
-                          _BuildPlan(insuredModel: insuredList[index])),
+                          _BuildPlan(insuredModel: insuredList.insureds[index])),
                 ),
               ],
             ),

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_meedu/router.dart' as router;
 import '../../global_controllers/theme_controller.dart';
@@ -36,7 +37,7 @@ class _RegisterCiState extends State<RegisterCi> {
 
   @override
   Widget build(BuildContext context) {
-    final user = router.arguments(context);
+    final User user = router.arguments as User;
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: ListView(

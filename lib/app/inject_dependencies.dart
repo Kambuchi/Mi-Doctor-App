@@ -13,22 +13,22 @@ import 'domain/repositories/sign_up_repository.dart';
 
 Future<void> injectDependencies() async {
   final preferences = await SharedPreferences.getInstance();
-  Get.i.lazyPut<AuthenticationRepository>(
+  Get.lazyPut<AuthenticationRepository>(
     () => AuthenticationRepositoryImpl(
       FirebaseAuth.instance,
     ),
   );
-  Get.i.lazyPut<SignUpRepository>(
+  Get.lazyPut<SignUpRepository>(
     () => SignUpRepositoryImpl(
       FirebaseAuth.instance,
     ),
   );
-  Get.i.lazyPut<AccountRepository>(
+  Get.lazyPut<AccountRepository>(
     () => AccountRepositoryImpl(
       FirebaseAuth.instance,
     ),
   );
-  Get.i.lazyPut<PreferenceRepository>(
+  Get.lazyPut<PreferenceRepository>(
     () => PreferenceRepositoryImpl(preferences),
   );
 }

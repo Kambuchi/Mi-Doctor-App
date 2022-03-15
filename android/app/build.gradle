@@ -42,7 +42,7 @@ android {
             keyPassword 'chocla1508'
         }
     }
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'

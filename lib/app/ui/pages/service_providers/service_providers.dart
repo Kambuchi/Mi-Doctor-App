@@ -11,7 +11,7 @@ class ServiceProviders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final OfficeList officeList = router.arguments(context);
+    final OfficeList officeList = router.arguments as OfficeList;
     return Scaffold(
       body: Center(
         child: ListView(

@@ -6,7 +6,7 @@ class ResetPasswordController extends SimpleNotifier {
   String _email = '';
   String get email => _email;
 
-  final _authenticationRepository = Get.i.find<AuthenticationRepository>();
+  final _authenticationRepository = Get.find<AuthenticationRepository>();
 
   void onEmailChanged(String text) {
     _email = text;

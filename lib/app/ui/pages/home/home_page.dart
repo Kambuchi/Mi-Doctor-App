@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_meedu/flutter_meedu.dart';
-import 'package:flutter_meedu/state.dart';
-import 'package:flutter_meedu/meedu.dart';
 import '../../../ui/pages/home/home_controller.dart';
 import '../../../ui/pages/home/widgets/home_tab_bar.dart';
 import '../../../ui/pages/home/tabs/home/home_tab.dart';

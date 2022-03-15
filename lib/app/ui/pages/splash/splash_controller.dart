@@ -5,7 +5,7 @@ import 'package:flutter_meedu/flutter_meedu.dart';
 
 class SplashController extends SimpleNotifier {
   final SessionController _sessionController;
-  final _authRepository = Get.i.find<AuthenticationRepository>();
+  final _authRepository = Get.find<AuthenticationRepository>();
 
   String? _routeName;
   String? get routeName => _routeName;
@@ -19,10 +19,12 @@ class SplashController extends SimpleNotifier {
     if (user != null) {
       _routeName = Routes.HOME;
       _sessionController.setUser(user);
-    } else { 
+    
+    } else {
       _routeName = Routes.LANDING_PAGE;
     }
     notify();
+      this.dispose();
   }
 
   // @override

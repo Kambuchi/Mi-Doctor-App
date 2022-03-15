@@ -1,3 +1,4 @@
+import 'package:app_mi_doctor/app/ui/pages/home/tabs/home/home_tab.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_meedu/state.dart';
@@ -35,9 +36,8 @@ class ProfileTab extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, watch) {
-    final sessionController = watch(sessionProvider);
-    final isDark = context.isDarkMode;
     final user = sessionController.user!;
+    final isDark = context.isDarkMode;
     final displayName = user.displayName ?? '';
     final firstLetter = displayName.isNotEmpty ? displayName[0] : "";
     return ListView(

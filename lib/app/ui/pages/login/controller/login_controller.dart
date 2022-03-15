@@ -7,7 +7,7 @@ import '../../../global_controllers/seccion_controller.dart';
 class LoginController extends SimpleNotifier {
   final SessionController _sessionController;
   String _email = '', _password = '';
-  final _authenticationRepository = Get.i.find<AuthenticationRepository>();
+  final _authenticationRepository = Get.find<AuthenticationRepository>();
 
   final GlobalKey<FormState> formKey = GlobalKey();
 

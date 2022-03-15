@@ -1,3 +1,4 @@
+import 'package:app_mi_doctor/app/domain/models/insured_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_meedu/router.dart' as router;
 
@@ -6,7 +7,7 @@ class BuildImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final insuredModel = router.arguments(context);
+    final insuredModel = router.arguments as InsuredModel;
     final planId = insuredModel.planId;
     String cardImage;
     switch (planId) {

@@ -1,3 +1,4 @@
+import 'package:app_mi_doctor/app/domain/models/insured_model.dart';
 import 'package:app_mi_doctor/app/ui/global_controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_meedu/router.dart' as router;
@@ -14,7 +15,7 @@ class MyPlanPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final insuredModel = router.arguments(context);
+    final InsuredModel insuredModel = router.arguments as InsuredModel;
 
     return Scaffold(
       backgroundColor: selectColorCard(insuredModel.plan),
@@ -226,7 +227,7 @@ class MyPlanPage extends StatelessWidget {
                                                   offset: Offset(1, 1))
                                             ]),
                                       ),
-                                      for (var item in insuredModel.adherentes)
+                                      for (var item in insuredModel.adherentes!)
                                         Text(
                                           item.nombreAdherente.toString(),
                                           style: kBodyStyle.copyWith(

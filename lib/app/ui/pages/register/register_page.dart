@@ -70,7 +70,7 @@ class RegisterPage extends StatelessWidget {
                     CustomInputField(
                       label: "Número de cédula",
                       onChanged: controller.onCiChanged,
-                      inputType: TextInputType.number,                     
+                      inputType: TextInputType.number,
                     ),
                     const SizedBox(
                       height: 15,
@@ -100,27 +100,25 @@ class RegisterPage extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                      Consumer(builder: (_, watch, __) {
-                        watch(
-                          registerProvider.select(
-                            (_) => _.password,
-                          ),
-                        );
-                        return CustomInputField(
-                          label: "Verificación de Password",
-                          onChanged: controller.onVPaswordChanged,
-                          isPassword: true,
-                          validator: (text) {
-                            if (controller.state.password != text) {
-                              return "Los passwords no coinciden";
-                            }
-                            if (text!.trim().length >= 6) {
-                              return null;
-                            }
-                            return "Password no coincide";
-                          },
-                        );
-                      }),
+                    Consumer(builder: (_, ___, __) {
+                      registerProvider.select(
+                        (_) => _.password,
+                      );
+                      return CustomInputField(
+                        label: "Verificación de Password",
+                        onChanged: controller.onVPaswordChanged,
+                        isPassword: true,
+                        validator: (text) {
+                          if (controller.state.password != text) {
+                            return "Los passwords no coinciden";
+                          }
+                          if (text!.trim().length >= 6) {
+                            return null;
+                          }
+                          return "Password no coincide";
+                        },
+                      );
+                    }),
                     const SizedBox(
                       height: 30,
                     ),

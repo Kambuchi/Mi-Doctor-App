@@ -25,7 +25,7 @@ class ThemeController extends SimpleNotifier {
   ThemeController() {
     _mode = _preference.isDarkMode ? ThemeMode.dark : ThemeMode.light;
   }
-  final PreferenceRepository _preference = Get.i.find();
+  final PreferenceRepository _preference = Get.find();
   ThemeMode get mode => _mode;
   bool get isDark => _mode == ThemeMode.dark;
 
